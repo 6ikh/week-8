@@ -19,9 +19,7 @@ class MarkovText(object):
             next_token = tokens[i + 1]
             self.term_dict[current_token].append(next_token)
 
-        self.term_dict = {}
-
-        return None
+        return self.term_dict
 
 
     def generate(self, seed_term=None, term_count=15):
@@ -42,7 +40,7 @@ class MarkovText(object):
         output = [current]
 
         for _ in range(term_count - 1):
-            next_words = self.term_dict[current_word]
+            next_words = self.term_dict.get(current_word, [])
             if not next_words:
                 break
 
