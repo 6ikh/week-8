@@ -40,7 +40,7 @@ class MarkovText(object):
         output = [current]
 
         for _ in range(term_count - 1):
-            next_words = self.term_dict.get(current_word, [])
+            next_words = self.term_dict.get(current, [])
             if not next_words:
                 break
 
