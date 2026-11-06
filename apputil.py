@@ -51,8 +51,8 @@ class MarkovText(object):
             if not next_words:
                 break
             # Randomly select the next word from the list of possible next words
-            current_word = np.random.choice(next_words)
+            current = np.random.choice(next_words)
             # Append selected next word to the output list and update the current term
-            output.append(current_word)
+            output.append(current)
         # Return the generated sequence of terms as a single string
         return " ".join(output)
